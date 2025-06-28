@@ -27,4 +27,40 @@ O objetivo é manipular dados na memória principal e nos registradores com as i
 
 ![alt text](./images/image.png)
 
+![alt text](./images/image2.png)
 
+![alt text](./images/image3.png)
+
+1 bit (binary digit):
+
+01010011
+
+8 bits = 1 byte
+
+Quandos temos 2 bytes, chamamos de palavra (word)
+
+No final das contas é tudo número
+
+![alt text](./images/image4.png)
+
+## Um programa escrito em código de máquina
+
+![alt text](./images/image5.png)
+
+## Executando o arquivo ok
+
+### Retornando erro 69, por contao do 45 na linha 6
+
+![alt text](./images/image6.png)
+
+Podemos retornar 0 - 255 (0 - FF (HEX))
+
+#### Para imprimir 0, o computador tem que receber o código do caracter zero, que é 30 em base 16
+
+## Código em Assembly
+
+![alt text](./images/image7.png)
+
+## O que é Assembly?
+
+![alt text](./images/image8.png)
