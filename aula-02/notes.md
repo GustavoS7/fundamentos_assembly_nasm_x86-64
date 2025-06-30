@@ -30,3 +30,43 @@ Existem quatro seções principais que podemos usar no nosso código e o linker 
 
 - .rodata ou .rdata -- Usada para armazenar dados que sejam somente leitura (readonly), por exemplo uma constante que não deve ter seu valor alterado em tempo de execução.
 
+## Stack
+
+Processadores da arquitetura x86 tem uma implementação nativa de uma pilha, que é representada na memória RAM, onde essa pode ser manipulada por instruções específicas da arquitetura ou diretamente como qualquer outra região da memória. Essa pilha normalmente é chamada de hardware stack.
+
+O registrador SP/ESP/RSP, Stack Pointer, serve como ponteiro para o topo da pilha podendo ser usado como referência inicial para manipulação de valores na mesma. Onde o "topo" nada mais é que o último valor empilhado. Ou seja, o Stack Pointer está sempre apontando para o último valor na pilha.
+
+A Stack é uma área de memória usada para armazenar contextos temporários da execução do programa, principalmente relacionados a funções:
+
+- Parâmetros de função
+
+- Variáveis locais
+
+- Endereço de retorno (quando a função termina)
+
+- Stack frames (contexto de execução)
+
+Cresce para baixo
+
+Gerenciamento:
+
+- Feita automaticamente pelo compilador e pela CPU.
+
+- Quando uma função é chamada: um novo frame é empilhado.
+
+- Ao sair da função: o frame é removido (desempilhado).
+
+## Heap
+
+A Heap é uma região usada para alocação dinâmica de memória. Ou seja, quando você precisa de memória em tempo de execução, sem saber o tamanho exato durante a compilação.
+
+Cresce para cima, em direção à stack
+
+Para alocar memória dinamicamente ao executar nosso código, e não como variáveis, usaremos o heap do programa. Não precisamos saber exatamente como ele funciona, mas para deixar claro: é uma área do nosso código em execução (thread ou processo) que nos permite alocar memória dinamicamente. Não é infinito, mas é mais do que suficiente para a maioria das partes! Portanto, usaremos instruções para alocar memória de um tamanho específico de byte e, posteriormente, armazenar nesse novo local de memória alocado tudo o que desejarmos.
+
+Riscos:
+- Memory Leak: esquecer de liberar memória.
+
+- Heap Overflow: alocar tanta memória que invade outras áreas (inclusive a stack).
+
+Como os dois crescem em direções opostas, se o programa for muito exigente (como chamadas recursivas infinitas ou alocações gigantescas), eles podem se encontrar no meio da RAM do processo e causar falhas.
