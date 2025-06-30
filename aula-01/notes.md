@@ -64,3 +64,11 @@ Podemos retornar 0 - 255 (0 - FF (HEX))
 ## O que é Assembly?
 
 ![alt text](./images/image8.png)
+
+![alt text](./images/image9.png)
+
+![alt text](./images/image10.png)
+
+![alt text](./images/image11.png)
+
+![alt text](./images/image12.png)
