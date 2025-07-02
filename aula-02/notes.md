@@ -70,3 +70,25 @@ Riscos:
 - Heap Overflow: alocar tanta memória que invade outras áreas (inclusive a stack).
 
 Como os dois crescem em direções opostas, se o programa for muito exigente (como chamadas recursivas infinitas ou alocações gigantescas), eles podem se encontrar no meio da RAM do processo e causar falhas.
+
+
+## Explicando código
+
+```asm
+msg: db "Salve, simpatia", 10
+```
+
+- ```msg```: é um rótulo (label). Ele nomeia um endereço de memória, que pode ser usado para se referir a esse dado depois 
+
+- ```db```: significa "define byte" — ele diz ao montador (assembler) para armazenar bytes específicos na memória.
+
+- ```"Salve, simpatia"```: é a string que está sendo armazenada. Cada caractere é convertido em seu valor ASCII e armazenado byte a byte.
+
+- ```10```: é o valor decimal para newline (\n) em ASCII, ou seja, quebra de linha.
+
+Essa linha coloca na memória, a partir do rótulo msg, a seguinte sequência de bytes:
+
+```'S' 'a' 'l' 'v' 'e' ',' ' ' 's' 'i' 'm' 'p' 'a' 't' 'i' 'a' '\n'```
+Ou em ASCII decimal:
+
+```83 97 108 118 101 44 32 115 105 109 112 97 116 105 97 10```
