@@ -12,7 +12,8 @@ len: equ $ - msg              ; len - rótulo do tamanho da mensagem
 section .text
 
   global _start ; A diretiva 'global' torna o rótulo '_start'
-                ; visível
+                ; visível, ponto inicial do programa
 
 _start:
-  
+
+  mov rax, 1                 ;

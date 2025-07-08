@@ -108,7 +108,7 @@ section .text
 section .data
 
 msg:	db  "Salve, simpatia!",10
-len:    equ $ - msg  
+len:    equ $ - msg
 ```
 
 ### 2.1 - Rótulos <!--{{{1-->

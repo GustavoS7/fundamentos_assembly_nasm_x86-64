@@ -92,3 +92,19 @@ Essa linha coloca na memória, a partir do rótulo msg, a seguinte sequência de
 Ou em ASCII decimal:
 
 ```83 97 108 118 101 44 32 115 105 109 112 97 116 105 97 10```
+
+```asm
+len: equ $ - msg
+```
+
+```len```: é um rótulo constante (um label associado a um valor fixo)
+
+```equ```: significa "equivale a" - define um valor constante no momento da montagem
+
+```$```: representa o endereço atual (posição atual no código, ou seja, o próximo byte a ser definido)
+
+```msg```: é o endereço do início da string
+
+Essa linha está dizendo ao montador:
+
+“Crie uma constante chamada len que representa o comprimento da string começando em msg.”
